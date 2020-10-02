@@ -48,7 +48,8 @@
   color: #fff;
   text-align: center;
   text-transform: capitalize;
-  background: rgba(0, 0, 0, 0.8);
+  /* background: rgba(0, 0, 0, 0.8); */
+  background:rgb(0,183,255) ;
   border-radius: 4px;
 }
 
