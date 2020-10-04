@@ -31,7 +31,10 @@ d3.csv("assets/data/data.csv").then(function(povertyData) {
 });
 // Create scale functions
 var xLinearScale = d3.scaleLinear()
-.domain(d3.extent(povertyData, d => d.poverty))
+// .domain(d3.extent(povertyData, d => d.poverty))
+.domain([d3.min(povertyData, d => d.poverty)-1 ,
+        d3.max(povertyData, d => d.poverty)
+        ])
 .range([0, width]);
 
 var yLinearScale = d3.scaleLinear()
@@ -58,7 +61,7 @@ var circlesGroup = chartGroup.selectAll("Circle")
 .attr("cx", d => xLinearScale(d.poverty))
 .attr("cy", d => yLinearScale(d.healthcare))
 .attr("r", "12")
-.attr("fill","skyblue")
+.attr("fill","purple")
 
 //   .attr("fill", "rgb(117, 145, 197)") 
 .attr("opacity", "0.5");
